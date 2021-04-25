@@ -1,5 +1,5 @@
 defmodule Inmana.RestaurantTest do
-  use Inmana.DataCase
+  use Inmana.DataCase, async: true
 
   alias Ecto.Changeset
   alias Inmana.Restaurant
@@ -18,6 +18,7 @@ defmodule Inmana.RestaurantTest do
 
     test "when there are empty params, returns an invalid changeset" do
       params = %{name: "", email: ""}
+
       expected_validation = %{
         email: ["can't be blank"],
         name: ["can't be blank"]
