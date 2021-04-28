@@ -23,6 +23,6 @@ defmodule Inmana.Supplies.Scheduler do
   end
 
   defp schedule_notification do
-    Process.send_after(self(), :generate, 1000 * 10)
+    Process.send_after(self(), :generate, 1000 * 10 * 60 * 60)
   end
 end
